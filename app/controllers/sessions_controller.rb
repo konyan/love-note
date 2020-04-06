@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(name:session_params)
+    user = User.find_by(name: params[:session][:name].downcase)
     if user
       session[:user_id] = user.id
       flash[:success] = "Successfully Login"
@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
 
   private
     def session_params
-      params.require(:session).permit(:name.down_case)
+      params.require(:session).permit(:name)
     end
 
 end
