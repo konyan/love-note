@@ -1,0 +1,10 @@
+<h1 class="ui header">First header</h1>
+
+<%# <button class="ui blue button login_btn">login</button> %>
+
+
+<% if logged_in? %>
+<%= link_to 'Logout',logout_path, class: "ui blue button",method: :delete%>
+<% else %>
+<%= link_to 'Login',login_path, class: "ui blue button"%>
+<% end %>

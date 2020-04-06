@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 2.7'
 gem 'hirb'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 
+gem 'semantic-ui-sass'
+
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
