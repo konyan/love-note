@@ -4,6 +4,13 @@
     <% @articles.each do |article|%>
         <figure>
             <%= image_tag(article.image.image_url) %>
+            <div class="top__layout">
+                <h4>
+                    <%= article.category.name%>
+                </h4>
+                <small><%= pluralize(100,"love")%></small>
+            </div>
+            <%= image_tag('heart-click.png',class:"love-icon")%>
             <figcaption>Cinderella wearing European fashion of the mid-1860’s</figcaption>
         </figure>
     <% end %>
