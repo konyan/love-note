@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2020_04_04_214104) do
     t.integer "user_id"
     t.integer "category_id"
     t.integer "font_id"
-    t.boolean "is_private"
+    t.boolean "is_private" , :default => false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
