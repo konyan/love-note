@@ -1,0 +1,22 @@
+<header class="fixed-top">
+  <nav class="inner-header layout-flex flex-space-around">
+      <div class="logo layout-flex flex-item-center">
+              <h1>
+                <%= link_to 'LoveNotes',root_path%>
+              </h1>
+      </div>
+      <div class="search layout-flex flex-item-center">
+          <input type="text" placeholder="Search note ...">
+      </div>
+      <div class="page layout-flex flex-item-center flex-space-around">
+        <a href="#" >
+          Home
+        </a>
+        <% if logged_in? %>
+          <%= link_to 'Logout',logout_path,method: :delete%>
+        <% else %>
+          <%= link_to 'Login',login_path%>
+        <% end %>
+      </div>
+  </nav>
+</header>
