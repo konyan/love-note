@@ -10,8 +10,17 @@
                 </h4>
                 <small><%= pluralize(100,"love")%></small>
             </div>
-            <%= image_tag('heart-click.png',class:"love-icon")%>
-            <figcaption>Cinderella wearing European fashion of the mid-1860’s</figcaption>
+            <% if logged_in? %>
+                <span class="btn btn-active">
+                    <%= render 'layouts/love-btn'%>
+                </span>
+
+            <% else %>
+                <span class="btn">
+                    <%= render 'layouts/love-btn'%>
+                </span>
+            <% end %>
+            <figcaption><%= article.title%></figcaption>
         </figure>
     <% end %>
 </div>

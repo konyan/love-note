@@ -28,7 +28,6 @@ div#columns figure {
   transition: opacity 0.4s ease-in-out;
   display: inline-block;
   position: relative;
-  cursor: pointer;
 }
 
 div#columns figure img {
@@ -82,12 +81,10 @@ div#columns figure .top__layout small {
   text-transform: uppercase;
 }
 
-div#columns figure .love-icon {
-  width: 56px;
-  height: 56px;
+div#columns figure .btn {
   position: absolute;
-  top: 32px;
-  right: 32px;
+  top: 8px;
+  right: 8px;
   cursor: pointer;
 }
 
@@ -101,5 +98,70 @@ div#columns:hover figure:not(:hover) {
   }
   #columns figure {
     width: 100%;
+  }
+}
+
+$time: 0.2s;
+
+svg path {
+  transition: fill $time, stroke-width $time;
+  fill: transparent;
+}
+
+.btn {
+  background: transparent;
+  padding: 5px 10px;
+  color: #fff;
+  font-family: Helvetica;
+  margin: 24px;
+  transition: background $time, color $time, width $time;
+
+  &:hover {
+    color: red;
+
+    svg path {
+      fill: red;
+      stroke-width: 0;
+    }
+  }
+
+  &.btn-active {
+    color: red;
+
+    svg {
+      animation: pump 0.5s;
+
+      path {
+        fill: red;
+        stroke-width: 0;
+      }
+    }
+
+    &:hover {
+      color: #fff;
+
+      svg path {
+        fill: #fff;
+        stroke-width: 0;
+      }
+    }
+  }
+}
+
+@keyframes pump {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.5);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
   }
 }
