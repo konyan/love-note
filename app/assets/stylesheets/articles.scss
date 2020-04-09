@@ -28,6 +28,7 @@ div#columns figure {
   transition: opacity 0.4s ease-in-out;
   display: inline-block;
   position: relative;
+  cursor: pointer;
 }
 
 div#columns figure img {
@@ -49,8 +50,8 @@ div#columns figure figcaption {
 
 div#columns figure .top__layout {
   position: absolute;
-  top: 40px;
-  left: 32px;
+  top: 16px;
+  left: 24px;
   text-align: center;
 }
 
@@ -83,8 +84,8 @@ div#columns figure .top__layout small {
 
 div#columns figure .btn {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 0px;
+  right: 0px;
   cursor: pointer;
 }
 

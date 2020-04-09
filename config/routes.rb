@@ -8,7 +8,11 @@ Rails.application.routes.draw do
 
   delete 'logout', to: 'sessions#destroy'
 
-  resources :articles, except: [:index]
+  resources :articles, except: [:index] do
+    scope module: :articles do
+      resources :loves, only: [:create, :destroy]
+    end
+  end
 
   resources :users
 
