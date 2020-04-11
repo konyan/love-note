@@ -126,6 +126,9 @@ header {
 .page a:nth-child(2) {
   border-right: 2px #fff solid;
 }
+.page a:last-child {
+  border: none;
+}
 
 .search input {
   border-radius: 50px;

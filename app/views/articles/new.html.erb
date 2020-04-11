@@ -1,4 +1,5 @@
 <div id="main__layout">
+  <%= render '/shared/errors', obj: @article%>
 
   <section class="article__new">
     <div class="article__new-form">
@@ -6,18 +7,14 @@
       <%= form_for @article, :html =>{:class => ""} do |f|%>
         <%= f.text_field :title, class: "form-input", placeholder: "Title"%>
         <%= f.text_area :content, class: "form-input", placeholder: "Content here"%>
-        <%= f.collection_select(:category_id,@categories,:id, :name,{prompt: 'Select Category'},{class:"input-selector"}) %>
-        <%= f.collection_select(:font_id,@fonts,:id, :name,{prompt: 'Select Font'},{class:"input-selector"}) %>
+        <%= f.collection_select(:category_id,Category.all,:id, :name,{prompt: 'Select Category'},{class:"input-selector"}) %>
+        <%= f.collection_select(:font_id,Font.all,:id, :name,{prompt: 'Select Font'},{class:"input-selector"}) %>
         <p>Please Select Background Image</p>
-        <%= f.select :image_id, @images.all.map { |i| [i.name, i.id, { 'data-img-src' => i.image_url} ] }, { :prompt => "Please select"}, { :class=>"image-picker show-html" } %>
+        <%= f.select :image_id, Image.all.map { |i| [i.name, i.id, { 'data-img-src' => i.image_url} ] }, { :prompt => "Please select"}, { :class=>"image-picker show-html" } %>
 
         <%= f.check_box :is_private, class: "form-check-box"%> Private Note
         <%= f.submit(@article.new_record? ? "Create Note" : "Edit Note", class: "")%>
       <% end %>
-    </div>
-    <div class="article__new-preview">
-      <h3>preview here</h3>
-     HEllo <%= @article.title%>
     </div>
   </section>
 </div>
