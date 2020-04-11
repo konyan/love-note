@@ -1,6 +1,6 @@
 
 <div class="article__show" >
-    <%= image_tag("https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/02/22/16/anonymous-man.jpg?w968h681", class:"article__show-bg-img") %>
+    <%= image_tag(@article.image.image_url, class:"article__show-bg-img") %>
     <div class="container">
         <div class="container__profile">
             <span class="container__profile-circle">

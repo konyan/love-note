@@ -1,14 +1,17 @@
 
-<section class="user__profile">
-    <span class="user__profile-circle">
-        <%= @user.name.capitalize[0] %>
-    </span>
-    <h4 class="user__profile-name"><%= @user.name.capitalize %></h4>
-    <small class="user__profile-notes-count">(<%= pluralize(@user.articles.count,"notes")%>)</small>
-    <%= button_to 'Create A Note',new_article_path,class:"user__profile-btn-create", method: :get%>
-</section>
-<div id="columns">
-    <% @articles.each do |article|%>
-        <%= render '/articles/article', article: article%>
-    <% end %>
+
+<div id="main__layout">
+    <section class="user__profile">
+        <span class="user__profile-circle">
+            <%= @user.name.capitalize[0] %>
+        </span>
+        <h4 class="user__profile-name"><%= @user.name.capitalize %></h4>
+        <small class="user__profile-notes-count">(<%= pluralize(@user.articles.count,"notes")%>)</small>
+        <%= button_to 'Create A Note',new_article_path,class:"user__profile-btn-create", method: :get%>
+    </section>
+    <div id="columns">
+        <% @articles.each do |article|%>
+            <%= render '/articles/article', article: article%>
+        <% end %>
+    </div>
 </div>
