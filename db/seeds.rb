@@ -30,7 +30,7 @@ def image_url
   JSON.parse(response.body)
 end
 
-10.times do
+1.times do
   user = User.create(
       name: Faker::Name.unique.first_name
     )
@@ -70,17 +70,25 @@ end
   #   t.boolean "is_private"
   #   t.datetime "created_at", precision: 6, null: false
   #   t.datetime "updated_at", precision: 6, null: false
-  article =Article.create(title: Faker::Lorem.question(word_count: 3),
-                content: Faker::Lorem.paragraph(sentence_count: 3),
-                image_id: image.id, user_id: user.id,
-                category_id:category.id,font_id: font.id,
-                is_private:false)
+
+  10.times do
+    imgResponse = image_url;
+    image = Image.create(
+      name: imgResponse["owner"],
+      image_url:imgResponse["file"]
+    )
+    article =Article.create(title: Faker::Lorem.question(word_count: 3),
+                  content: Faker::Lorem.paragraph(sentence_count: 3),
+                  image_id: image.id, user_id: user.id,
+                  category_id:category.id,font_id: font.id,
+                  is_private:false)
 
 
-                # article =Article.create(title: Faker::Lorem.question(word_count: 3),
-                # content: Faker::Lorem.paragraph(sentence_count: 3),
-                # image_id: 1, user_id: 1,
-                # category_id:1,font_id: 1,
-                # is_private:0)
-  puts article.title
+                  # article =Article.create(title: Faker::Lorem.question(word_count: 3),
+                  # content: Faker::Lorem.paragraph(sentence_count: 3),
+                  # image_id: 1, user_id: 1,
+                  # category_id:1,font_id: 1,
+                  # is_private:0)
+    puts article.title
+  end
 end

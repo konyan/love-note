@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_user,only:[:show]
 
   def new
     @user = User.new
@@ -13,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    @articles = @user.articles
   end
 
   private

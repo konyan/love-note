@@ -13,9 +13,13 @@
  *= require_tree .
  *= require_self
  */
+main {
+  padding-top: 100px;
+}
 
 #main__layout {
-  margin-top: 100px;
   position: relative;
   display: block;
+  overflow: auto;
+  height: 1000px;
 }

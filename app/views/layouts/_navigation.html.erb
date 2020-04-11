@@ -9,10 +9,9 @@
           <input type="text" placeholder="Search note ...">
       </div>
       <div class="page layout-flex flex-item-center flex-space-around">
-        <a href="#" >
-          Home
-        </a>
+        <%= link_to 'Home',root_path%>
         <% if logged_in? %>
+          <%= link_to 'My Notes',user_path(current_user)%>
           <%= link_to 'Logout',logout_path,method: :delete%>
         <% else %>
           <%= link_to 'Login',login_path%>

@@ -6,7 +6,7 @@ class Article < ApplicationRecord
   belongs_to :image
 
   has_many :votes
-  has_many :loved_by_users, through: :votes, source: :user
+  has_many :loved_by_users, ->{ where votes:{status: :love}},through: :votes, source: :user
 
   validates :title, presence: true, length: {minimum: 10, maximum: 30}
   validates :content, presence: true, length: {minimum: 20, maximum: 200}

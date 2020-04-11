@@ -4,6 +4,10 @@ html {
   padding: 0;
   font-family: "MarkerFelt", "Roboto";
   color: white;
+  background-color: #525252;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 * {
   -moz-box-sizing: border-box;
@@ -15,6 +19,7 @@ html {
   font-family: "MarkerFelt";
   src: url(../font/Marker\Felt.ttf);
 }
+
 ul {
   padding: 0;
   margin: 0;
@@ -100,6 +105,11 @@ header {
   font-family: "Markerfelt";
   height: auto;
   background-color: #313131;
+  z-index: 9999;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
 }
 .inner-header {
   padding: 0;
@@ -113,176 +123,16 @@ header {
   border-right: 2px #fff solid;
 }
 
+.page a:nth-child(2) {
+  border-right: 2px #fff solid;
+}
+
 .search input {
   border-radius: 50px;
   padding: 10px 40px;
   width: 400px;
   font-size: 20px;
   font-family: "MarkerFelt";
-}
-
-main {
-  margin-top: 80px;
-}
-.homepage {
-  width: 100%;
-  height: 600px;
-  position: relative;
-  height: 800px;
-}
-.homepage::after {
-  content: "";
-  background: url("https://images.pexels.com/photos/887349/pexels-photo-887349.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500");
-  background-size: cover;
-  opacity: 0.7;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
-}
-.heart h1,
-p {
-  padding: 5px;
-  margin: 0;
-}
-.heart {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-family: "Roboto";
-  max-width: 200px;
-  text-align: center;
-}
-.heart h1 {
-  font-size: 30px;
-  border-bottom: 3px red solid;
-}
-.heart p {
-  font-size: 20px;
-}
-.homepage-size {
-  padding: 30px;
-  padding-top: 70px;
-}
-.para-bottom {
-  position: absolute;
-  bottom: 0;
-  font-size: 30px;
-  padding: 30px;
-  padding-left: 100px;
-}
-.para-bottom h1 {
-  font-size: 40px;
-}
-.para-bottom p {
-  margin-top: 30px;
-  text-align: center;
-  padding-left: 50px;
-  padding-bottom: 30px;
-}
-
-/* section photo */
-
-section {
-  width: 100%;
-  height: 1000px;
-  margin-top: 2px;
-}
-
-.frame {
-  position: relative;
-}
-.first_frame img {
-  width: 100%;
-  height: 500px;
-  position: relative;
-}
-
-.bottom {
-  position: absolute;
-  bottom: 10px;
-  left: 30px;
-}
-
-.second_frame img {
-  width: 100%;
-  height: 700px;
-  position: relative;
-}
-
-.second_frame_bottom img {
-  width: 100%;
-  height: 300px;
-  position: relative;
-}
-.third_frame img {
-  width: 100%;
-  height: 300px;
-  position: relative;
-}
-.third_frame_bottom img {
-  width: 100%;
-  height: 700px;
-  position: relative;
-}
-.four_frame img {
-  width: 100%;
-  height: 1000px;
-  position: relative;
-}
-
-.forward {
-  background: #726f6f;
-}
-.note a {
-  background: Red;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 5px #313131;
-}
-
-main .view {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  font-size: 30px;
-  margin: auto;
-}
-
-.view-bottom {
-  text-align: center;
-  flex-direction: column;
-}
-.view-heart h1:first-child {
-  border-bottom: 3px red solid;
-}
-.view-heart h1 {
-  padding: 10px;
-  font-size: 30px;
-}
-.profile {
-  padding: 20px;
-  width: 700px;
-  margin-bottom: 30px;
-}
-.profile img {
-  height: 50px;
-  max-width: 50px;
-  border-radius: 50%;
-  border: 5px solid white;
-}
-.profile h2 {
-  font-size: 20px;
-  padding-left: 10px;
-}
-
-@media (max-width: 1100px) {
-  .Frame.g-4 {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-  }
 }
 @media (max-width: 576px) {
   .Frame.g-4 {

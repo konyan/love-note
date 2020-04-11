@@ -1,26 +1,42 @@
 
- <div class="view" style="background-image: url(<%= image_path @article.image.image_url%>);background-size: cover;">
-            <div class="view-bottom layout-flex flex-item-center flex-center">
-                    <div class="profile layout-flex">
-                        <img src="./assets//img/img_avatar.png" alt="Avatar" style="width:200px">
-                        <div>
-                            <h2> KO Nyan</h2>
-                        </div>
-                    </div>
-                    <div>
-                        <h1>
-                            To my Darling
-                        </h1>
-                    </div>
-                    <div>
-                        <h3>
-                            The moment I saw you, I just knew it.<br>
-                            I relaized you are all that i have been searching for<br>
-                            all of my life
-                        </h3>
-                    </div>
-                    <div class="view-heart layout-flex flex-center">
-                        <h1>Romance</h1>
-                        <h1>100</h1>
-                    </div>
+<div class="article__show" >
+    <%= image_tag("https://static.independent.co.uk/s3fs-public/thumbnails/image/2017/02/22/16/anonymous-man.jpg?w968h681", class:"article__show-bg-img") %>
+    <div class="container">
+        <div class="container__profile">
+            <span class="container__profile-circle">
+                <%= @article.user.name.capitalize[0] %>
+            </span>
+            <h4 class="container__profile-name">
+                <%= @article.user.name.capitalize%>
+            </h4>
+            <div class="container__profile-love-btn">
+            <% if loved_article?(@article) %>
+                <%= link_to article_lofe_path(@article,id:love_or_unlove_btn(@article).id), method: :delete do%>
+                <span class="btn btn-active">
+                    <%= render 'layouts/love-btn-big'%>
+                </span>
+                <% end %>
+            <% else %>
+                <%= link_to  article_loves_path(@article), method: :post do%>
+                <span class="btn">
+                    <%= render 'layouts/love-btn-big'%>
+                </span>
+                <% end %>
+            <% end %>
             </div>
+        </div>
+        <div class="container__body">
+            <h3 class="container__body-title">
+                <%= @article.title%>
+            </h3>
+            <p class="container__body-content">
+                <%= @article.content%>
+            </p>
+        </div>
+        <div class="container__footer">
+            <h1 class="container__footer-category">Romance</h1>
+            <h1 class="container__footer-count">
+            <%= pluralize(@article.loved_by_users.count,"love")%></h1>
+        </div>
+    </div>
+</div>

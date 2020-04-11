@@ -29,6 +29,10 @@ div#columns figure {
   display: inline-block;
   position: relative;
   cursor: pointer;
+  min-height: 400px;
+  min-width: 100%;
+  background-color: #424242;
+  opacity: 0.8;
 }
 
 div#columns figure img {
@@ -164,5 +168,108 @@ svg path {
   }
   100% {
     transform: scale(1);
+  }
+}
+
+/* Article:  https://superdevresources.com/full-background-image-css/ */
+.article__show {
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden; // hide vertical
+  overflow-x: hidden; // hide horizontal
+  position: relative;
+}
+
+.article__show-bg-img {
+  display: block;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+.article__show .container {
+  position: absolute;
+  background-color: rgba(34, 25, 25, 0.4);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  &__profile {
+    position: relative;
+    margin: 6% 8% 3% 8%;
+
+    &-circle {
+      display: inline-block;
+      border: 1px solid #f2f2f2;
+      font-size: 1.8rem;
+      color: white;
+      width: 72px;
+      height: 72px;
+      background: red;
+      border-radius: 50%;
+      padding: 18px;
+      text-align: center;
+    }
+
+    &-name {
+      margin-left: 20px;
+      font-size: 1.5rem;
+      display: inline-block;
+    }
+
+    &-love-btn {
+      float: right;
+      margin-right: 16px;
+      margin-top: 16px;
+    }
+  }
+
+  &__body {
+    text-align: center;
+    margin: 2% auto;
+
+    &-title {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    &-content {
+      width: 40%;
+      margin: auto;
+      margin-top: 4%;
+      font-size: 1.6rem;
+      font-weight: thin;
+    }
+  }
+
+  &__footer {
+    text-align: center;
+    margin: 2% auto;
+
+    &-category {
+      font-size: 1rem;
+      display: inline-block;
+      margin-right: 1rem;
+
+      &:after {
+        content: "";
+        display: block;
+        border-bottom: 2px solid red;
+        padding-bottom: 10px;
+      }
+    }
+
+    &-count {
+      display: inline-block;
+      font-size: 1.2rem;
+      margin-top: 1%;
+    }
   }
 }
