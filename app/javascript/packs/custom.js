@@ -38,4 +38,10 @@ $(document).ready(function () {
     $(this).toggleClass("btn-active");
   });
   $(".image-picker").imagepicker({ show_label: true });
+
+  $(".page a").click(function (e) {
+    console.log("ADDD ");
+    e.preventDefault();
+    $(".modal").toggleClass("is-visible");
+  });
 });
