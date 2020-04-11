@@ -37,4 +37,5 @@ $(document).ready(function () {
   $("div#columns figure .btn").click(function () {
     $(this).toggleClass("btn-active");
   });
+  $(".image-picker").imagepicker({ show_label: true });
 });
