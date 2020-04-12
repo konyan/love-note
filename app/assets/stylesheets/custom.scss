@@ -1,0 +1,221 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "MarkerFelt", "Roboto";
+  color: white;
+  background-color: #525252;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "MarkerFelt";
+  src: url(../font/Marker\Felt.ttf);
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+ul > li {
+  list-style: none;
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.layout-flex {
+  display: flex;
+}
+
+.flex-start {
+  justify-content: flex-start;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+.flex-space-between {
+  justify-content: space-between;
+}
+
+.flex-space-around {
+  justify-content: space-around;
+}
+
+.flex-center {
+  justify-content: center;
+}
+.flex-wrap {
+  flex-flow: wrap;
+}
+
+.flex-item-center {
+  align-items: center;
+}
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+.layout-grid {
+  display: grid;
+}
+.g-1 {
+  grid-template-columns: 1fr;
+}
+.g-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.g-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.g-4 {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.grid-gap-1 {
+  grid-gap: 1px;
+  border: 0.5px #313131 solid;
+}
+
+/* header */
+
+header {
+  width: 100%;
+  font-size: 20px;
+  color: white;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin: auto;
+  font-family: "Markerfelt";
+  height: auto;
+  background-color: #313131;
+  z-index: 9999;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+}
+.inner-header {
+  padding: 0;
+  height: 80px;
+  margin: 0 auto;
+}
+.page a {
+  padding: 0 10px;
+}
+.page a:first-child {
+  border-right: 2px #fff solid;
+}
+
+.page a:nth-child(2) {
+  border-right: 2px #fff solid;
+}
+.page a:last-child {
+  border: none;
+}
+
+.search input {
+  border-radius: 50px;
+  padding: 10px 40px;
+  width: 400px;
+  font-size: 20px;
+  font-family: "MarkerFelt";
+}
+@media (max-width: 576px) {
+  .Frame.g-4 {
+    text-align: center;
+    grid-template-columns: 1fr !important;
+  }
+  .heart {
+    left: 50px;
+  }
+  .bottom {
+    left: 50px;
+  }
+}
+@media (max-width: 699px) {
+  .para-bottom {
+    padding-left: 50px;
+    font-size: 25px;
+  }
+  .profile {
+    padding: 20px;
+    width: 500px;
+  }
+  .view {
+    font-size: 25px;
+  }
+  header {
+    font-size: 16px;
+  }
+  .search input {
+    padding: 10px 30px;
+    width: 200px;
+  }
+}
+
+/* line 6, source/sass/image-picker.scss */
+ul.thumbnails.image_picker_selector {
+  overflow: auto;
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+/* line 15, source/sass/image-picker.scss */
+ul.thumbnails.image_picker_selector ul {
+  overflow: auto;
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+/* line 25, source/sass/image-picker.scss */
+ul.thumbnails.image_picker_selector li.group_title {
+  float: none;
+}
+/* line 30, source/sass/image-picker.scss */
+ul.thumbnails.image_picker_selector li {
+  margin: 0px 12px 12px 0px;
+  float: left;
+}
+/* line 35, source/sass/image-picker.scss */
+ul.thumbnails.image_picker_selector li .thumbnail {
+  padding: 6px;
+  border: 1px solid #ddd;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+/* line 42, source/sass/image-picker.scss */
+ul.thumbnails.image_picker_selector li .thumbnail img {
+  -webkit-user-drag: none;
+  width: 110px;
+  height: 110px;
+}
+/* line 48, source/sass/image-picker.scss */
+ul.thumbnails.image_picker_selector li .thumbnail.selected {
+  background: #08c;
+}

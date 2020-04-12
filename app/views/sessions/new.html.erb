@@ -1,0 +1,15 @@
+<h1 align="center">Login</h1>
+
+<div class="row">
+  <div class="col-md-12">
+    <%= form_for :session,url: login_path do |f| %>
+      <p>
+        <%= f.label :name%>
+        <%= f.text_field :name , class: "form-control", placeholder: "Enter Name"%>
+      </p>
+      <p>
+        <%= f.submit("Login",class: "btn btn-primary")%>
+      </p>
+    <% end%>
+  </div>
+</div>

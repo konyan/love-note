@@ -1,0 +1,18 @@
+<header class="fixed-top">
+  <nav class="inner-header layout-flex flex-space-around">
+      <div class="logo layout-flex flex-item-center">
+              <h1>
+                <%= link_to 'LoveNotes',root_path%>
+              </h1>
+      </div>
+      <div class="page layout-flex flex-item-center flex-space-around">
+        <%= link_to 'Home',root_path%>
+        <% if logged_in? %>
+          <%= link_to 'My Notes',user_path(current_user)%>
+          <%= link_to 'Logout',logout_path,method: :delete%>
+        <% else %>
+            <%= link_to 'Login',login_path,remote: true,class: "user-login"%>
+        <% end %>
+      </div>
+  </nav>
+</header>
