@@ -1,6 +1,7 @@
 
 <div class="article__show" >
-    <%= image_tag("https://source.unsplash.com/#{@article.image.image_url}/1200x700", class:"article__show-bg-img") %>
+    <%= image_tag("https://source.unsplash.com/#{@article.image.image_url}/600x800", srcset: { "https://source.unsplash.com/#{@article.image.image_url}/1024x1200" => "1024w", "https://source.unsplash.com/#{@article.image.image_url}/1600x1400" => "1980w" },class:"article__show-bg-img")%>
+
     <div class="container">
         <div class="container__profile">
             <span class="container__profile-circle">
