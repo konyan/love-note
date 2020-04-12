@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.order(vote_count: :desc,updated_at: :desc)
+    @top_article = Article.order(vote_count: :desc).first
   end
 
   def new
