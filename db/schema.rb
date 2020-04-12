@@ -23,8 +23,10 @@ ActiveRecord::Schema.define(version: 2020_04_09_102341) do
     t.integer "category_id"
     t.integer "font_id"
     t.boolean "is_private"
+    t.integer "vote_count", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -52,6 +54,7 @@ ActiveRecord::Schema.define(version: 2020_04_09_102341) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_users_on_name", unique: true
   end
 
   create_table "votes", force: :cascade do |t|
@@ -59,7 +62,11 @@ ActiveRecord::Schema.define(version: 2020_04_09_102341) do
     t.integer "article_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "status", limit: 1, default: 0
+    t.integer "status", limit: 2, default: 0
   end
 
+  add_foreign_key "articles", "categories"
+  add_foreign_key "articles", "fonts"
+  add_foreign_key "votes", "articles"
+  add_foreign_key "votes", "users"
 end

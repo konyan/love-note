@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   helper_method :preview
 
   def index
-    @articles = Article.all
+    @articles = Article.order(vote_count: :desc,updated_at: :desc)
   end
 
   def new

@@ -30,14 +30,16 @@ def image_url
   JSON.parse(response.body)
 end
 
-1.times do
+image_id = ['bgovxZpRgaE', 'p_-bbbzy87s','U4U2Nd1PoTQ','PDtJt8Cp-4Q','2dSDReCc1v0','tNxKIzdgp5Q','YCp90ZVuDYo','EYdvwgcFCao','aSscHG6lvko','bWtd1ZyEy6w','3W8iRG8-F-A']
+image_name = ['love_inspire', 'feel_raining','old_rose','alone_forest','ran_away','cragger',"coffee",'home','window','raining','raining water']
+
+for i in 1...11 do
   user = User.create(
       name: Faker::Name.unique.first_name
     )
-  imgResponse = image_url;
   image = Image.create(
-    name: imgResponse["owner"],
-    image_url:imgResponse["file"]
+    name: image_name[i],
+    image_url:image_id[i]
   )
 
   category = Category.create(name: Faker::Creature::Animal.name, priority: 5)
@@ -71,12 +73,7 @@ end
   #   t.datetime "created_at", precision: 6, null: false
   #   t.datetime "updated_at", precision: 6, null: false
 
-  10.times do
-    imgResponse = image_url;
-    image = Image.create(
-      name: imgResponse["owner"],
-      image_url:imgResponse["file"]
-    )
+  5.times do
     article =Article.create(title: Faker::Lorem.question(word_count: 3),
                   content: Faker::Lorem.paragraph(sentence_count: 3),
                   image_id: image.id, user_id: user.id,
