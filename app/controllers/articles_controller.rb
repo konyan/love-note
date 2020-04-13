@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   helper_method :preview
 
   def index
-    @articles = Article.order(vote_count: :desc, updated_at: :desc)
+    @articles = Article.includes(:category,:image).order(vote_count: :desc, updated_at: :desc)
     @top_article = Article.order(vote_count: :desc).first
   end
 
