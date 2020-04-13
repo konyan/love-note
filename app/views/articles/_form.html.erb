@@ -1,0 +1,17 @@
+<section class="article__new">
+    <div class="article__new-form">
+      <%= render '/shared/errors', obj: @article%>
+      <h2 class="article__new-form-title">Write how you feel</h2>
+      <%= form_for @article, :html =>{:class => ""} do |f|%>
+        <%= f.text_field :title, class: "form-input", placeholder: "Title"%>
+        <%= f.text_area :content, class: "form-input", placeholder: "Content here"%>
+        <%= f.collection_select(:category_id,Category.all,:id, :name,{prompt: 'Select Category'},{class:"input-selector"}) %>
+        <%= f.collection_select(:font_id,Font.all,:id, :name,{prompt: 'Select Font'},{class:"input-selector"}) %>
+        <p>Please Select Background Image</p>
+        <%= f.select :image_id, Image.all.map { |i| [i.name, i.id, { 'data-img-src' => "https://source.unsplash.com/#{i.image_url}/100x120"} ] }, { :prompt => "Please select"}, { :class=>"image-picker show-html" } %>
+
+        <%= f.check_box :is_private, class: "form-check-box"%> Private Note
+        <%= f.submit(@article.new_record? ? "Create Note" : "Edit Note", class: "")%>
+      <% end %>
+    </div>
+  </section>

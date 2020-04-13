@@ -1,0 +1,33 @@
+<%= link_to article_path(article) do%>
+
+<figure>
+  <%= image_tag(image_url(article.image)) %>
+  <div class="top__layout">
+    <h4>
+        <%= article.category.name%>
+    </h4>
+    <small> <%= pluralize(article.vote_count,"love")%></small>
+  </div>
+  <% if loved_article?(article) %>
+    <%= link_to article_lofe_path(article,id:love_or_unlove_btn(article).id), method: :delete do%>
+    <span class="btn btn-active">
+        <%= render 'layouts/love-btn'%>
+    </span>
+    <% end %>
+  <% else %>
+    <% if logged_in?%>
+      <%= link_to  article_loves_path(article), method: :post do%>
+      <span class="btn">
+          <%= render 'layouts/love-btn'%>
+      </span>
+      <% end %>
+    <% else%>
+      <%= link_to login_path,remote: true,class: "user-login btn" do%>
+          <%= render 'layouts/love-btn'%>
+      <% end %>
+    <% end %>
+  <% end %>
+  <figcaption><%= article.title%></figcaption>
+</figure>
+
+<% end %>

@@ -1,0 +1,46 @@
+
+<div id="main__layout">
+    <section id="header">
+        <div class="header">
+            <%= image_tag("https://source.unsplash.com/#{@top_article.image.image_url}/1600x600", class:"header__image") %>
+            <div class="header__layout">
+                <div class="header__layout-top">
+                    <h4 class="header__layout-top-category">
+                        <%= @top_article.category.name%>
+                    </h4>
+                    <small class="header__layout-top-love"> <%= pluralize(@top_article.vote_count,"love")%></small>
+                    <% if loved_article?(@top_article) %>
+                            <%= link_to article_lofe_path(@top_article,id:love_or_unlove_btn(@top_article).id), method: :delete do%>
+                            <span class="btn btn-active">
+                                <%= render 'layouts/love-btn-big'%>
+                            </span>
+                            <% end %>
+                        <% else %>
+                            <% if logged_in?%>
+                                <%= link_to  article_loves_path(@top_article), method: :post do%>
+                                <span class="btn">
+                                    <%= render 'layouts/love-btn-big'%>
+                                </span>
+                                <% end %>
+                            <% else %>
+                                <%= link_to login_path,remote: true,class: "user-login btn" do%>
+                                    <%= render 'layouts/love-btn-big'%>
+                                <% end %>
+                            <% end %>
+                        <% end %>
+                </div>
+                <div class="header__layout-bottom">
+                    <h3 class="header__layout-bottom-title">
+                        <%= @top_article.title%>
+                    </h3>
+                    <p class="header__layout-bottom-content"> <%= @top_article.content%></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="columns">
+        <% @articles.each do |article|%>
+            <%= render '/articles/article', article: article%>
+        <% end %>
+    </div>
+</div>
