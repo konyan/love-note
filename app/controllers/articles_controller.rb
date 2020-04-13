@@ -8,9 +8,6 @@ class ArticlesController < ApplicationController
   end
 
   def new
-    @images = Image.all
-    @fonts = Font.all
-    @categories = Category.all
     @article = Article.new
   end
 
@@ -31,7 +28,14 @@ class ArticlesController < ApplicationController
 
   def edit; end
 
-  def update; end
+  def update
+    if @article.update(article_params)
+      flash[:success] = "Note was successfuly update"
+      redirect_to user_path(current_user)
+    else
+      render :edit
+    end
+  end
 
   def show; end
 

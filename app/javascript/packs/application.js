@@ -11,6 +11,8 @@ require("channels");
 require("packs/image-picker");
 require("packs/custom");
 // Here is my custom jQuery file like packs/custom.js
+import toastr from "toastr";
+window.toastr = toastr;
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)

@@ -298,6 +298,13 @@ svg path {
       display: inline-block;
     }
 
+    &-edit-btn {
+      margin-left: 16px;
+      display: inline-block;
+      border-bottom: 2px solid #f2f2f2;
+      padding-bottom: 8px;
+    }
+
     &-love-btn {
       float: right;
       margin-right: 16px;
