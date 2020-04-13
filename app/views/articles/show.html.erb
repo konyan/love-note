@@ -10,13 +10,15 @@
             <h4 class="container__profile-name">
                 <%= @article.user.name.capitalize%>
             </h4>
-            <%= link_to edit_article_path(@article) do%>
-                <small class="container__profile-edit-btn">
+            <% if create_by_user?(@article) %>
+                <%= link_to edit_article_path(@article) do%>
+                    <small class="container__profile-edit-btn">
 
-                    Edit Note
+                        Edit Note
 
-                </small>
-            <% end %>
+                    </small>
+                <% end %>
+            <% end%>
             <div class="container__profile-love-btn">
             <% if loved_article?(@article) %>
                 <%= link_to article_lofe_path(@article,id:love_or_unlove_btn(@article).id), method: :delete do%>

@@ -3,6 +3,10 @@ module ArticlesHelper
     Vote.find_by(article: article, user: current_user, status: 0)
   end
 
+  def create_by_user?(article)
+    current_user == article.user
+  end
+
   def loved_article?(article)
     !love_or_unlove_btn(article).nil?
   end
