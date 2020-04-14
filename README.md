@@ -8,8 +8,16 @@
     Express your feeling to everyone or someone your care.
     <br />
     <br />
-    <a href="https://github.com/konyan/love-note">View Demo</a>
+    <a href="https://murmuring-cliffs-77814.herokuapp.com/">View Demo</a>
+    <br />
   </p>
+  <h4>Testing User List</h4>
+  <ul>
+    <li>gwyneth</li>
+    <li>krissy</li>
+    <li>seymour</li>
+    <li>emanuel</li>
+  </ul>
 </p>
 
 <!-- TABLE OF CONTENTS -->
