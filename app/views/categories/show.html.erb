@@ -1,0 +1,19 @@
+<div id="main__layout">
+    <section class="user__profile">
+        <h4 class="user__profile-name"><%= @category.name.capitalize %></h4>
+        <small class="user__profile-notes-count">(<%= pluralize(@category.articles.count,"notes")%>)</small>
+    </section>
+    <div id="columns">
+        <% @articles.each do |article|%>
+            <% if logged_in? %>
+                <%= link_to article_path(article) do%>
+                    <%= render '/articles/article', article: article%>
+                <%end %>
+            <%else%>
+                <%= link_to login_path,remote: true,class: "user-login" do%>
+                    <%= render '/articles/article', article: article%>
+                <%end %>
+            <%end%>
+        <% end %>
+    </div>
+</div>
