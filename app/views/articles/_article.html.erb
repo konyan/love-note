@@ -1,12 +1,14 @@
 
 <figure>
   <%= image_tag(image_url(article.image)) %>
-  <div class="top__layout">
-    <h4>
-        <%= article.category.name%>
-    </h4>
-    <small> <%= pluralize(article.vote_count,"love")%></small>
-  </div>
+  <%= link_to category_path(article.category) do%>
+    <div class="top__layout">
+      <h4>
+          <%= article.category.name%>
+      </h4>
+      <small> <%= pluralize(article.vote_count,"love")%></small>
+    </div>
+  <% end %>
   <% if loved_article?(article) %>
     <%= link_to article_lofe_path(article,id:love_or_unlove_btn(article).id), method: :delete do%>
     <span class="btn btn-active">
