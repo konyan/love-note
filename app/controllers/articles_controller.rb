@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   helper_method :preview
 
   def index
-    @articles = Article.includes(:category,:image).order(vote_count: :desc, updated_at: :desc)
+    @articles = Article.includes(:category, :image).order(vote_count: :desc, updated_at: :desc)
     @top_article = Article.order(vote_count: :desc).first
   end
 
@@ -30,7 +30,7 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
-      flash[:success] = "Note was successfuly update"
+      flash[:success] = 'Note was successfuly update'
       redirect_to user_path(current_user)
     else
       render :edit

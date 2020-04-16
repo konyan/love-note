@@ -11,7 +11,15 @@
     </section>
     <div id="columns">
         <% @articles.each do |article|%>
-            <%= render '/articles/article', article: article%>
+            <% if logged_in? %>
+                <%= link_to article_path(article) do%>
+                    <%= render '/articles/article', article: article%>
+                <%end %>
+            <%else%>
+                <%= link_to login_path,remote: true,class: "user-login" do%>
+                    <%= render '/articles/article', article: article%>
+                <%end %>
+            <%end%>
         <% end %>
     </div>
 </div>
