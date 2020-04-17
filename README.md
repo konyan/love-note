@@ -8,16 +8,10 @@
     Express your feeling to everyone or someone your care.
     <br />
     <br />
-    <a href="https://murmuring-cliffs-77814.herokuapp.com/">Live Demo</a>
+    <a href="https://murmuring-cliffs-77814.herokuapp.com/">Heroku Live Demo</a> |
+    <a href="http://159.65.130.237">Digital Ocean Live Demo</a>
     <br />
   </p>
-  <h4>Testing User List</h4>
-  <ul>
-    <li>gwyneth</li>
-    <li>krissy</li>
-    <li>seymour</li>
-    <li>emanuel</li>
-  </ul>
 </p>
 
 <!-- TABLE OF CONTENTS -->
