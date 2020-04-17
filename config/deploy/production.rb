@@ -60,4 +60,4 @@
 #     # password: "please use keys"
 #   }
 
-server 'ubuntu@ec2-54-254-255-94.ap-southeast-1.compute.amazonaws.com', user: 'ubuntu', roles: %w{app db web}
+server '159.65.130.237', user: 'konyan', roles: %w{app db web}
