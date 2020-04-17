@@ -1,8 +1,9 @@
 require 'rails_helper'
+require 'faker'
 
 RSpec.describe User, type: :model do
   subject do
-    User.new(name: 'nyan')
+    User.new(name: Faker::Name.unique.first_name)
   end
 
   it 'user should be valid' do

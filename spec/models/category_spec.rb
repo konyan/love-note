@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Category, type: :model do
   subject do
-    Category.new(name: 'romance', priority: 5)
+    Category.new(name: 'test romance', priority: 5)
   end
 
   it 'Category should be valid' do
