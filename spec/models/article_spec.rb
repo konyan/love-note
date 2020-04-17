@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Article, type: :model do
-  font = Font.new(name: 'notosan', origin_name: 'Nato San')
-  category = Category.new(name: 'romance', priority: 5)
-  image = Image.new(name: 'Rain', image_url: 'U4U2Nd1PoTQ')
-  user = User.new(name: 'nyan')
+  font = Font.create(name: Faker::Name.unique.first_name, origin_name: 'Nato San')
+  category = Category.create(name: Faker::Name.unique.first_name, priority: 5)
+  image = Image.create(name: Faker::Name.unique.first_name, image_url: 'U4U2Nd1PoTQ')
+  user = User.create(name: Faker::Name.unique.first_name)
 
   subject do
     Article.new(title: 'Hello World',

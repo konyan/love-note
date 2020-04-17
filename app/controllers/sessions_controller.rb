@@ -2,15 +2,17 @@ class SessionsController < ApplicationController
   def new; end
 
   def create
-    user = User.find_by(name: params[:session][:name].downcase)
+    name = params[:session][:name].downcase
+    user = User.find_by(name: name)
     if user
       session[:user_id] = user.id
       flash[:success] = 'Successfully Login'
-      redirect_to root_path
     else
-      flash.now[:danger] = 'there was something wrong with your login information'
-      render :new
+      flash[:info] = "new username #{name} is registered. "
+      user = User.create(name: name)
+      session[:user_id] = user.id
     end
+    redirect_to root_path
   end
 
   def destroy
